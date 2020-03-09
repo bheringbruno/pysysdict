@@ -1,7 +1,7 @@
 import os, json, sys
 
 def adiciona_nome():
-    nome = input('Nome do usuario: ')
+    nome = input('\nNome do usuario: ')
     idade = int(input(f'Idade do usuario { nome }: '))
     global list
     try:
@@ -12,7 +12,7 @@ def adiciona_nome():
         print(json.dumps(list, indent=2, sort_keys=True))
 
 def remove_usuario():
-    nome = input('Usuario a ser removido: ')
+    nome = input('\nUsuario a ser removido: ')
     try:
         del list[nome]
         print(json.dumps(list, indent=2, sort_keys=True))
@@ -22,9 +22,10 @@ def remove_usuario():
 
 def main():
     adiciona_nome()
-    print('Usuario cadastrado.')
+    print('\n> Usuario cadastrado.\n')
     while True:
-        outro = input('[a]dicionar/[r]emover outro usuario ou [S]air? ')
+        print("\n=== Menu ===")
+        outro = input('[a]dicionar usuario\n[r]emover usuario\n[S]air\n\nOpcao: ')
         if outro == "a":
             adiciona_nome()
             print('Usuario cadastrado.')
